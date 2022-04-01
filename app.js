@@ -1,4 +1,4 @@
-let display = document.getElementById('App');
+
 
 
 let a;
@@ -58,3 +58,39 @@ for (let x = 0; x < size; x++) {
 }
 
 document.write(board);
+
+
+
+//Calculator
+
+let display = document.getElementById('display');
+
+let button = Array.from(document.getElementsByClassName('button'));
+
+button.map( button => {
+    button.addEventListener('click', (e) => {
+        switch(e.target.innerText) {
+            case 'AC':
+                display.value = '';
+                break;
+            case "C":
+                if (display.value) {
+                    display.value = display.value.slice(0, -1);
+                }
+                break;
+            case '=':
+                try {
+                    display.value = eval(display.value);
+                } catch {
+                    display.value = "Err!"
+                }
+                
+                break;  
+            default:
+                display.value += e.target.innerText;
+        }
+    });
+});
+
+
+

@@ -5,13 +5,104 @@
 }
 
 body {
-    min-height: 100vh;
-    width: 100vw;
-    padding: 50px 100px;
+    display: grid;
+    place-content: center;
+}
+
+.calculator {
+    margin: 100px auto 50px auto;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid transparent;
+    box-shadow: 1px 5px 10px rgb(78, 78, 78);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 40px 0px 10px 0;
+    background-color: #000;
 }
 
 
-#App {
+.display {
+    width: 100%;
+}
+
+#display {
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+    text-align: end;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+
+#display:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numbers {
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+    padding: 20px 5px;
+    background-color: #000;
     place-items: center;
+}
+
+button {
+    width: 80%;
+    border-radius: 100%;
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: rgb(37, 37, 37);
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.1;
+    opacity: 1;
+    
+}
+
+button:hover {
+    background-color: tomato;
+    color: #000;
+    transition: 0.5s ease-in-out;
+}
+
+#zero {
+    grid-column: 1 / span 2;
+    width: 90%;
+    border-radius: 30px;
+}
+
+button:nth-child(1),
+button:nth-child(2),
+button:nth-child(3) {
+    border-radius: 50%;
+    background-color: grey;
+    border-color: transparent;
+    box-shadow: 2px 4px 3px rgba(17, 17, 17, 0.562);
+}
+
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16),
+button:nth-child(19) {
+    background-color: rgb(255, 187, 1);
+    border-color: transparent;
+    box-shadow: 2px 4px 3px rgba(17, 17, 17, 0.562);
+}
+
+button:hover {
+    opacity: 0.8;
 }
